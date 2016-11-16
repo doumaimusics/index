@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<style type="text/css">
+	div{
+		background: honeydew;
+		width: 1200px;
+		height: 300px;
+		margin:0 auto;
+	}
+</style>
+<body>
+	<div>
+			@mixin userem($size) {<br>
+  $list: 2048px,1920px,1440px,1600px,1242px,1140px,1280px,1024px,1080px,960px,800px,768px,736px,732px,720px,667px,<br>640px,600px,568px,540px,533px,480px,435px,414px,412px,400px,385px,384px,375px, 360px,320px,300px,240px;<br>
+  @each $i in $list{<br>
+    @media screen and(max-width: #{$i}){<br>
+      html{<br>
+        font-size: 100px * ($i/$size);<br>
+      }<br>
+    }<br>
+  }<br>
+}<br>
+@include userem(750px);   括号里是设计稿的宽度
+<br>
+	</div>
+
+</body>
+</html>
